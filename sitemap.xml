@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://thepresidentofai.github.io/</loc>
-  </url>
-  <url>
-    <loc>https://thepresidentofai.github.io/contact/</loc>
-  </url>
+  <url><loc>https://thepresidentofai.github.io/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/pricing/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/services/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/services/clarity-audit/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/services/technical-seo-sprint/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/services/static-website-builds/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/services/monthly-seo-desk/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/process/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/knowledge-base/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/case-notes/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/about/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/contact/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/privacy/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/terms/</loc></url>
+  <url><loc>https://thepresidentofai.github.io/404/</loc></url>
 </urlset>
