@@ -2,13 +2,18 @@
 
 ## Purpose
 
-Hello World GitHub Pages profile site for `thepresidentofai`.
+GitHub Pages site for `Boho Digital Services`, hosted from the `thepresidentofai` account.
 
 ## Current Contents
 
-- `index.html` - deployable Hello World homepage.
-- `assets/css/styles.css` - page styles for the Hello World launch page.
-- `robots.txt` - crawler allowlist placeholder with sitemap follow-up noted.
+- `index.html` - main marketing homepage.
+- `contact/index.html` - project inquiry and contact brief page.
+- `404.html` - custom not-found page.
+- `assets/css/styles.css` - shared site styles.
+- `assets/js/site.js` - navigation, reveal, and copy-prompt behavior.
+- `assets/img/` - hero, process, and favicon assets.
+- `robots.txt` - crawl policy plus sitemap reference.
+- `sitemap.xml` - current public page index.
 - `LICENSE` - MIT license created with the GitHub repository.
 
 ## Setup Notes

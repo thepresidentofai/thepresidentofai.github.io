@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add a Sitemap line after the live GitHub Pages URL is known.
-
+Sitemap: https://thepresidentofai.github.io/sitemap.xml
