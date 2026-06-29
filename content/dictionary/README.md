@@ -1,4 +1,4 @@
-# Owl Dictionary Governance
+﻿# Owl Dictionary Governance
 
 The Owl Dictionary is a maintained content product, not a loose pile of tooltips.
 
@@ -67,3 +67,4 @@ Do not publish thin, mass-generated pages.
 - Use canonical URLs and unique metadata.
 - Link full entries back into relevant services or Ask the Owl routes.
 - Avoid creating glossary pages for terms that do not need explanation.
+

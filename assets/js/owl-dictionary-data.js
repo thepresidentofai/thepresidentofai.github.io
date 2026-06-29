@@ -1,17 +1,19 @@
-window.BOHO_DICTIONARY = [
+﻿window.BOHO_DICTIONARY = [
   {
     slug: "seo",
     term: "SEO",
     category: "SEO Basics",
     tone: "owl",
-    shortDefinition: "SEO stands for search engine optimization. It is the work of making a website easier for search engines and people to find, understand, and trust."
+    shortDefinition: "SEO stands for search engine optimization. It is the work of making a website easier for search engines and people to find, understand, and trust.",
+    fullEntryUrl: "/ask-the-owl/dictionary/seo/"
   },
   {
     slug: "search-intent",
     term: "Search intent",
     category: "SEO Basics",
     tone: "owl",
-    shortDefinition: "Search intent is the reason behind a search: what the person actually wants to learn, compare, buy, or do."
+    shortDefinition: "Search intent is the reason behind a search: what the person actually wants to learn, compare, buy, or do.",
+    fullEntryUrl: "/ask-the-owl/dictionary/search-intent/"
   },
   {
     slug: "serp",
@@ -39,7 +41,8 @@ window.BOHO_DICTIONARY = [
     term: "Metadata",
     category: "SEO Basics",
     tone: "owl",
-    shortDefinition: "Metadata is the page information that helps search engines and browsers understand what a page is about."
+    shortDefinition: "Metadata is the page information that helps search engines and browsers understand what a page is about.",
+    fullEntryUrl: "/ask-the-owl/dictionary/metadata/"
   },
   {
     slug: "title-tag",
@@ -76,7 +79,8 @@ window.BOHO_DICTIONARY = [
     term: "Indexing",
     category: "Technical SEO",
     tone: "owl",
-    shortDefinition: "Indexing is the process search engines use to store and organize pages so they can appear in search results."
+    shortDefinition: "Indexing is the process search engines use to store and organize pages so they can appear in search results.",
+    fullEntryUrl: "/ask-the-owl/dictionary/indexing/"
   },
   {
     slug: "sitemap",
@@ -162,7 +166,8 @@ window.BOHO_DICTIONARY = [
     term: "Content cluster",
     category: "Content Strategy",
     tone: "owl",
-    shortDefinition: "A content cluster is a group of related pages connected around one larger topic to build depth, usefulness, and authority."
+    shortDefinition: "A content cluster is a group of related pages connected around one larger topic to build depth, usefulness, and authority.",
+    fullEntryUrl: "/ask-the-owl/dictionary/content-cluster/"
   },
   {
     slug: "topic-cluster",
@@ -275,7 +280,7 @@ window.BOHO_DICTIONARY = [
     term: "GA4",
     category: "Analytics & Reporting",
     tone: "owl",
-    shortDefinition: "GA4 is Google Analytics 4, Google’s analytics platform for measuring traffic and on-site behavior."
+    shortDefinition: "GA4 is Google Analytics 4, Google's analytics platform for measuring traffic and on-site behavior."
   },
   {
     slug: "conversion",
@@ -467,7 +472,7 @@ window.BOHO_DICTIONARY = [
     term: "Guaranteed rankings",
     category: "Bad SEO / Fox Traps",
     tone: "fox",
-    shortDefinition: "Guaranteed rankings are a red flag because no SEO provider controls Google’s search results.",
+    shortDefinition: "Guaranteed rankings are a red flag because no SEO provider controls Google's search results.",
     fullEntryUrl: "/ask-the-owl/dictionary/guaranteed-rankings/"
   },
   {
@@ -547,3 +552,5 @@ window.BOHO_DICTIONARY = [
     fullEntryUrl: "/ask-the-owl/dictionary/climate-aware-workflow/"
   }
 ];
+
+

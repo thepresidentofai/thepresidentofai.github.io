@@ -1,6 +1,6 @@
-# Image Credits
+﻿# Image Credits
 
-Placeholder SVG scene files were created locally for the Boho Digital Services v1 refinement pass so the layout can ship without hotlinked stock assets.
+Placeholder SVG scene files were created locally for the Boho Digital v1 refinement pass so the layout can ship without hotlinked stock assets.
 
 ## Replacement Plan
 
@@ -24,3 +24,5 @@ Placeholder SVG scene files were created locally for the Boho Digital Services v
 - Replace placeholders with curated licensed assets or custom generated finals.
 - Convert photographic replacements to WebP or AVIF.
 - Preserve width and height attributes in templates when the final assets are dropped in.
+
+

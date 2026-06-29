@@ -1,8 +1,8 @@
-# thepresidentofai.github.io
+﻿# thepresidentofai.github.io
 
 ## Purpose
 
-GitHub Pages site for `Boho Digital Services`, hosted from the `thepresidentofai` account.
+GitHub Pages site for `Boho Digital`, hosted from the `thepresidentofai` account.
 
 ## Current Contents
 
@@ -36,3 +36,5 @@ The Owl Dictionary is maintained as a content product. Short definitions live in
 
 - Repository: `https://github.com/thepresidentofai/thepresidentofai.github.io`
 - Published site: `https://thepresidentofai.github.io/`
+
+

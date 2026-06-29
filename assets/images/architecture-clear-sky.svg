@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
   <title id="title">Placeholder architecture under clear sky</title>
   <desc id="desc">Minimal concrete-style forms under a warm sky used as a temporary content image placeholder.</desc>
   <!-- TODO: Replace with licensed or final generated architecture image asset. -->
@@ -9,3 +9,5 @@
   <rect x="438" y="308" width="270" height="396" rx="16" fill="#fffdf8"/>
   <rect x="690" y="366" width="340" height="338" rx="16" fill="#b45c3d" opacity=".86"/>
 </svg>
+
+
