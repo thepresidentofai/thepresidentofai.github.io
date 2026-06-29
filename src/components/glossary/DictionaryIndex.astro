@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+import DictionaryEntryCard from "./DictionaryEntryCard.astro";
+
+interface Props {
+  entries: CollectionEntry<"dictionary">[];
+}
+
+const { entries } = Astro.props;
+const categories = Array.from(new Set(entries.map((entry) => entry.data.category)));
+---
+<div class="dictionary-index">
+  {categories.map((category) => (
+    <section class="dictionary-category-band" data-reveal>
+      <div class="section-heading compact">
+        <p class="eyebrow">{category}</p>
+        <h2>{category}</h2>
+      </div>
+      <div class="dictionary-card-grid">
+        {entries
+          .filter((entry) => entry.data.category === category)
+          .map((entry) => <DictionaryEntryCard entry={entry} />)}
+      </div>
+    </section>
+  ))}
+</div>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  href: string;
+  eyebrow?: string;
+  title: string;
+  description: string;
+}
+
+const { href, eyebrow, title, description } = Astro.props;
+---
+<a class="honeycomb-card" href={href} data-reveal>
+  {eyebrow && <p class="price-label">{eyebrow}</p>}
+  <h3>{title}</h3>
+  <p>{description}</p>
+</a>

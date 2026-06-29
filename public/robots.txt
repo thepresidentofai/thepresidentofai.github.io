@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thepresidentofai.github.io/sitemap-index.xml

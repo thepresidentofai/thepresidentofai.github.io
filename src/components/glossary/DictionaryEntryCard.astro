@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"dictionary">;
+}
+
+const { entry } = Astro.props;
+const href = `/ask-the-owl/dictionary/${entry.id}/`;
+---
+<article class="dictionary-entry-card" data-reveal>
+  <p class="micro-label">{entry.data.category}</p>
+  <h3><a href={href}>{entry.data.title}</a></h3>
+  <p>{entry.data.shortDefinition}</p>
+  <a class="inline-link" href={href}>Open the full entry</a>
+</article>
