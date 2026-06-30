@@ -23,6 +23,7 @@ Astro-generated GitHub Pages site for `Boho Digital`, published from the `thepre
 - `src/components/` - reusable Astro layout, section, UI, mascot, and glossary components
 - `src/styles/` - tokens, typography, layout, component, and animation styling
 - `public/assets/` - local brand SVGs, patterns, textures, and supporting front-end assets
+- `_legacy-static/` - archived pre-Astro static export kept only for reference during the migration
 - `.github/workflows/deploy.yml` - GitHub Pages deployment pipeline for `dist/`
 
 ## Commands
