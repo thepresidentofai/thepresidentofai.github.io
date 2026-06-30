@@ -3,5 +3,12 @@
   "compilerOptions": {
     "baseUrl": "."
   },
-  "exclude": ["_legacy-static", "dist", "node_modules"]
+  "exclude": [
+    "_legacy-static",
+    "dist",
+    "node_modules"
+  ],
+  "include": [
+    "./worker-configuration.d.ts"
+  ]
 }
