@@ -2,14 +2,25 @@
 interface Props {
   href: string;
   eyebrow?: string;
+  label?: string;
   title: string;
   description: string;
+  tone?: "honey" | "moss" | "sage" | "terracotta";
 }
 
-const { href, eyebrow, title, description } = Astro.props;
+const {
+  href,
+  eyebrow,
+  label,
+  title,
+  description,
+  tone = "honey"
+} = Astro.props;
+
+const cardLabel = label ?? eyebrow;
 ---
-<a class="honeycomb-card" href={href} data-reveal>
-  {eyebrow && <p class="price-label">{eyebrow}</p>}
+<a class:list={["honeycomb-card", `honeycomb-card--${tone}`]} href={href} data-reveal>
+  {cardLabel && <p class="price-label">{cardLabel}</p>}
   <h3>{title}</h3>
   <p>{description}</p>
 </a>

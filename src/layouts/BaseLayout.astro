@@ -9,10 +9,16 @@ import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
 import "@fontsource/ibm-plex-mono/600.css";
 import "../styles/tokens.css";
+import "../styles/base.css";
 import "../styles/typography.css";
-import "../styles/global.css";
-import "../styles/components.css";
+import "../styles/layout.css";
+import "../styles/buttons.css";
+import "../styles/forms.css";
+import "../styles/honeycomb.css";
+import "../styles/sections.css";
+import "../styles/glossary.css";
 import "../styles/animations.css";
+import "../styles/utilities.css";
 import BaseHead from "../components/layout/BaseHead.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
@@ -53,7 +59,7 @@ const {
   <body class={bodyClass}>
     <div class="site-shell">
       <Header />
-      <main class="page-main">
+      <main id="main-content" class="page-main">
         <slot />
       </main>
       <Footer />
@@ -88,25 +94,47 @@ const {
       }
 
       const glossaryRoots = document.querySelectorAll("[data-glossary-root]");
+      const closeGlossaryRoot = (root) => {
+        if (!(root instanceof HTMLElement)) return;
+
+        root.classList.remove("is-open");
+        const button = root.querySelector("[data-glossary-toggle]");
+        if (button instanceof HTMLButtonElement) {
+          button.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      const closeGlossaries = () => {
+        glossaryRoots.forEach((root) => closeGlossaryRoot(root));
+      };
+
       glossaryRoots.forEach((root) => {
+        if (!(root instanceof HTMLElement)) return;
+
         const button = root.querySelector("[data-glossary-toggle]");
         if (!(button instanceof HTMLButtonElement)) return;
 
         button.addEventListener("click", (event) => {
           event.stopPropagation();
-          const open = root.classList.toggle("is-open");
+          const open = !root.classList.contains("is-open");
+          closeGlossaries();
+          root.classList.toggle("is-open", open);
           button.setAttribute("aria-expanded", String(open));
+        });
+
+        root.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeGlossaryRoot(root);
+            button.focus();
+          }
         });
       });
 
-      document.addEventListener("click", () => {
-        glossaryRoots.forEach((root) => {
-          root.classList.remove("is-open");
-          const button = root.querySelector("[data-glossary-toggle]");
-          if (button instanceof HTMLButtonElement) {
-            button.setAttribute("aria-expanded", "false");
-          }
-        });
+      document.addEventListener("click", closeGlossaries);
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeGlossaries();
+        }
       });
 
       const mailtoForm = document.querySelector("[data-mailto-form]");

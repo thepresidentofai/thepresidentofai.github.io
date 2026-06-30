@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/ui/Button.astro";
 import AskTheOwlCard from "../components/ui/AskTheOwlCard.astro";
+import ContactForm from "../components/ui/ContactForm.astro";
 ---
 <BaseLayout
   title="Contact | Boho Digital"
@@ -63,60 +64,7 @@ import AskTheOwlCard from "../components/ui/AskTheOwlCard.astro";
         </AskTheOwlCard>
       </div>
 
-      <form class="contact-form section-card" data-mailto-form data-reveal="left">
-        <div class="form-grid">
-          <label>
-            <span>Name</span>
-            <input name="Name" type="text" required />
-          </label>
-          <label>
-            <span>Email</span>
-            <input name="Email" type="email" required />
-          </label>
-          <label>
-            <span>Business name</span>
-            <input name="Business name" type="text" />
-          </label>
-          <label>
-            <span>Website URL</span>
-            <input name="Website URL" type="url" />
-          </label>
-          <label class="field-span">
-            <span>Current SEO provider, hosting provider, or platform, if relevant</span>
-            <input name="Current provider or platform" type="text" />
-          </label>
-          <label>
-            <span>What do you need help with?</span>
-            <select name="Help needed">
-              <option>SEO Growth Audit</option>
-              <option>Technical SEO Cleanup</option>
-              <option>Content Strategy</option>
-              <option>Local SEO</option>
-              <option>Website Optimization</option>
-              <option>Analytics &amp; Reporting</option>
-              <option>AI-Assisted Workflows</option>
-              <option>SEO / Hosting Provider Transfer</option>
-              <option>Monthly Growth Retainer</option>
-              <option>Not sure yet</option>
-            </select>
-          </label>
-          <label>
-            <span>Budget range</span>
-            <input name="Budget range" type="text" placeholder="Optional" />
-          </label>
-          <label>
-            <span>Timeline</span>
-            <input name="Timeline" type="text" placeholder="Optional" />
-          </label>
-          <label class="field-span">
-            <span>Anything else worth knowing?</span>
-            <textarea name="Anything else worth knowing" rows="7"></textarea>
-          </label>
-        </div>
-        <div class="card-actions">
-          <Button type="submit">Open the email draft</Button>
-        </div>
-      </form>
+      <ContactForm className="section-card" reveal="left" />
     </div>
   </section>
 </BaseLayout>

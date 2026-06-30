@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/ui/Button.astro";
+import ForestHero from "../components/sections/ForestHero.astro";
 import HoneycombGrid from "../components/ui/HoneycombGrid.astro";
 import HoneycombServiceCard from "../components/ui/HoneycombServiceCard.astro";
 import HexImageFrame from "../components/ui/HexImageFrame.astro";
@@ -9,6 +10,7 @@ import AskTheOwlCard from "../components/ui/AskTheOwlCard.astro";
 import ImpactBadge from "../components/ui/ImpactBadge.astro";
 import MigrationMap from "../components/ui/MigrationMap.astro";
 import GlossaryTerm from "../components/glossary/GlossaryTerm.astro";
+import ContactForm from "../components/ui/ContactForm.astro";
 ---
 <BaseLayout
   title="Style Guide | Boho Digital"
@@ -44,6 +46,8 @@ import GlossaryTerm from "../components/glossary/GlossaryTerm.astro";
     </div>
   </section>
 
+  <ForestHero />
+
   <section class="section section-forest image-backed">
     <div class="container page-hero-grid">
       <div class="hero-panel" data-reveal>
@@ -58,9 +62,9 @@ import GlossaryTerm from "../components/glossary/GlossaryTerm.astro";
   <section class="section section-band-mist">
     <div class="container">
       <HoneycombGrid>
-        <HoneycombServiceCard href="#" eyebrow="Desktop" title="Honeycomb card" description="Honeycomb is structural here, not just decorative wallpaper." />
-        <HoneycombServiceCard href="#" eyebrow="Mobile" title="Readable geometry" description="The cards flatten gracefully on smaller viewports instead of breaking the layout." />
-        <HoneycombServiceCard href="#" eyebrow="Pattern" title="System language" description="Services, metrics, clusters, and badges all inherit the same family." />
+        <HoneycombServiceCard href="#" label="Desktop" tone="honey" title="Honeycomb card" description="Honeycomb is structural here, not just decorative wallpaper." />
+        <HoneycombServiceCard href="#" label="Mobile" tone="moss" title="Readable geometry" description="The cards flatten gracefully on smaller viewports instead of breaking the layout." />
+        <HoneycombServiceCard href="#" label="Pattern" tone="sage" title="System language" description="Services, metrics, clusters, and badges all inherit the same family." />
       </HoneycombGrid>
     </div>
   </section>
@@ -90,22 +94,11 @@ import GlossaryTerm from "../components/glossary/GlossaryTerm.astro";
 
   <section class="section">
     <div class="container chapter-grid">
-      <form class="contact-form section-card" data-reveal>
-        <div class="form-grid">
-          <label>
-            <span>Name</span>
-            <input type="text" />
-          </label>
-          <label>
-            <span>Email</span>
-            <input type="email" />
-          </label>
-          <label class="field-span">
-            <span>Dictionary tooltip / popover</span>
-            <p>Inline terms like <GlossaryTerm slug="seo" /> should work on hover, focus, and tap.</p>
-          </label>
-        </div>
-      </form>
+      <div class="section-card" data-reveal>
+        <p class="eyebrow">ContactForm</p>
+        <p>Inline terms like <GlossaryTerm slug="seo" /> should work on hover, focus, tap, and Escape-to-close handling.</p>
+        <ContactForm />
+      </div>
       <article class="section-card" data-reveal="left">
         <p class="eyebrow">Checklist</p>
         <ul class="ledger-list">

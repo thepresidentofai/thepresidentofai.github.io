@@ -2,6 +2,8 @@
 import { services } from "../../data/services";
 import HoneycombGrid from "../ui/HoneycombGrid.astro";
 import HoneycombServiceCard from "../ui/HoneycombServiceCard.astro";
+
+const tones = ["honey", "moss", "sage", "terracotta"] as const;
 ---
 <section class="section section-band-mist">
   <div class="container">
@@ -15,12 +17,13 @@ import HoneycombServiceCard from "../ui/HoneycombServiceCard.astro";
       </p>
     </div>
     <HoneycombGrid>
-      {services.map((service) => (
+      {services.map((service, index) => (
         <HoneycombServiceCard
           href={`/services/${service.slug}/`}
-          eyebrow={service.cardEyebrow}
+          label={service.cardEyebrow}
           title={service.title}
           description={service.description}
+          tone={tones[index % tones.length]}
         />
       ))}
     </HoneycombGrid>
