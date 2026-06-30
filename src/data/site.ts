@@ -3,7 +3,7 @@ export const SITE = {
   descriptor: "Bohemian Digital Marketing & SEO",
   tagline: "Organic growth, engineered beautifully.",
   email: "hello@bohodigitalservices.com",
-  url: "https://thepresidentofai.github.io",
+  url: "https://bohodigitalservices.com",
   location: "Remote / United States",
   primaryCta: {
     label: "Get a Growth Audit",

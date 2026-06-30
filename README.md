@@ -46,4 +46,5 @@ Remote: `git@github.com:thepresidentofai/thepresidentofai.github.io.git`
 ## Verification
 
 - Repository: `https://github.com/thepresidentofai/thepresidentofai.github.io`
-- Published site: `https://thepresidentofai.github.io/`
+- Published site: `https://bohodigitalservices.com/`
+- GitHub Pages hostname: `https://thepresidentofai.github.io/`
