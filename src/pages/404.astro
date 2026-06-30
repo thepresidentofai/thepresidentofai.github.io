@@ -1,20 +1,19 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Button from "../components/ui/Button.astro";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+
+const metadata = {
+  title: '404',
+  ignoreTitleTemplate: true,
+};
 ---
-<BaseLayout title="404 | Boho Digital" description="This trail moved or never existed." noindex={true}>
-  <section class="page-hero section-forest image-backed">
-    <div class="container section-heading" data-reveal>
-      <p class="eyebrow">404</p>
-      <h1>This trail went missing.</h1>
-      <p>
-        The page may have moved into the new Astro structure. Head back to the main map
-        or try the services, dictionary, or work lane.
-      </p>
-      <div class="page-actions">
-        <Button href="/">Return home</Button>
-        <Button href="/ask-the-owl/dictionary/" variant="secondary">Open the Dictionary</Button>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="404"
+    title="That trail is not here."
+    subtitle="The page may have moved, the link may be wrong, or the route may still belong in the older forest map."
+    callToAction={{ text: 'Go home', href: '/' }}
+    callToAction2={{ text: 'See Services', href: '/services/' }}
+  />
+</Layout>

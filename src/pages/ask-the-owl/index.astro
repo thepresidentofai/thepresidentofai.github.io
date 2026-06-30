@@ -1,69 +1,72 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import OwlDictionaryCallout from "../../components/glossary/OwlDictionaryCallout.astro";
-import GlossaryTerm from "../../components/glossary/GlossaryTerm.astro";
-import Button from "../../components/ui/Button.astro";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Ask the Owl',
+  description: 'Plain-English answers for SEO, content, analytics, AI, provider transfers, and sustainable digital growth.',
+};
 ---
-<BaseLayout
-  title="Ask the Owl | Boho Digital"
-  description="Plain-English digital guidance for the rest of the forest: search, provider transfers, reporting, and operations explained clearly."
-  image="/assets/backgrounds/forest-mist.webp"
->
-  <section class="page-hero section-forest image-backed">
-    <div class="container page-hero-grid">
-      <div class="hero-panel" data-reveal>
-        <div class="breadcrumbs">
-          <a href="/">Home</a>
-          <span>/</span>
-          <strong>Ask the Owl</strong>
-        </div>
-        <p class="eyebrow">Ask the Owl</p>
-        <h1>Plain-English digital guidance for the rest of the forest.</h1>
-        <p class="hero-lead">
-          This is the educational layer for search, content, reporting, provider
-          transfers, and climate-aware digital operations. The point is translation, not
-          jargon performance.
-        </p>
-        <div class="page-actions">
-          <Button href="/ask-the-owl/dictionary/">Open the Dictionary</Button>
-          <Button href="/contact/" variant="secondary">Ask a scope question</Button>
-        </div>
-      </div>
-      <aside class="hero-side-panel" data-reveal="left">
-        <p class="micro-label">Good starting terms</p>
-        <ul class="ledger-list">
-          <li><GlossaryTerm slug="seo" /></li>
-          <li><GlossaryTerm slug="technical-seo" /></li>
-          <li><GlossaryTerm slug="dns" /></li>
-          <li><GlossaryTerm slug="provider-lock-in" /></li>
-        </ul>
-      </aside>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container chapter-grid">
-      <article class="section-card" data-reveal>
-        <p class="eyebrow">What lives here</p>
-        <p>
-          Search basics, technical explanations, provider-transfer language, reporting
-          cues, and terms that usually get waved around without being explained.
-        </p>
-      </article>
-      <article class="section-card" data-reveal="left">
-        <p class="eyebrow">How to use it</p>
-        <p>
-          Start with the short definition, then follow the full entry when the concept
-          affects a real decision. The dictionary is there to make the work easier to
-          navigate, not to pad the site with jargon.
-        </p>
-      </article>
-    </div>
-  </section>
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Ask the Owl"
+    title="Ask the Owl."
+    subtitle="Plain-English answers for SEO, content, analytics, AI, provider transfers, and sustainable digital growth."
+    callToAction={{ text: 'Open the Dictionary', href: '/ask-the-owl/dictionary/' }}
+    callToAction2={{ text: 'Ask a scope question', href: '/contact/' }}
+  />
 
-  <section class="section section-band-mist">
-    <div class="container">
-      <OwlDictionaryCallout />
-    </div>
-  </section>
-</BaseLayout>
+  <Features2
+    title="Start with the category that matches the problem."
+    columns={3}
+    items={[
+      { title: 'SEO Basics', description: 'Core search language that shapes visibility, structure, and technical trust.', icon: 'tabler:search' },
+      { title: 'Content Strategy', description: 'Clusters, search intent, and content relationships that support the whole forest.', icon: 'tabler:books' },
+      { title: 'Analytics & Reporting', description: 'Measurement language that clarifies what moved and what should change next.', icon: 'tabler:chart-histogram' },
+      { title: 'Provider Transfers', description: 'DNS, hosting, redirects, analytics continuity, and ownership language for messy moves.', icon: 'tabler:route-square-2' },
+      { title: 'AI & Digital Tools', description: 'Operational uses of AI that reduce drag without replacing judgment.', icon: 'tabler:cpu-2' },
+      { title: 'Bad SEO / Fox Traps', description: 'The phrases and tactics that look helpful right before they get expensive.', icon: 'tabler:alert-triangle' },
+      { title: 'Climate & Digital Footprint', description: 'Leaner patterns, quieter operations, and impact language that stays honest.', icon: 'tabler:leaf' },
+    ]}
+  />
+
+  <Content
+    tagline="How to use it"
+    title="Translation first. Bigger decisions second."
+    items={[
+      {
+        title: 'Read the short version first',
+        description: 'Start with the one-sentence definition when you only need a cleaner mental model.',
+      },
+      {
+        title: 'Follow the term into the real work',
+        description: 'The point is not to memorize jargon. It is to make audits, transfers, and strategy conversations easier to navigate.',
+      },
+      {
+        title: 'Ask when the stack still feels muddy',
+        description: 'If the term makes more sense but the project does not, bring the real situation into a scope conversation.',
+      },
+    ]}
+    image={{ src: '/assets/mascots/owl-dictionary.svg', alt: 'Owl icon representing Ask the Owl guidance' }}
+  />
+
+  <CallToAction
+    title="Need the definitions translated into action?"
+    subtitle="The dictionary is there to make the language easier. The next step is choosing the right audit, cleanup pass, or provider-transfer plan."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Open the Dictionary',
+        href: '/ask-the-owl/dictionary/',
+      },
+      {
+        text: 'Review Services',
+        href: '/services/',
+      },
+    ]}
+  />
+</Layout>

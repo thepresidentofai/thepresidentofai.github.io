@@ -1,178 +1,123 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Button from "../../components/ui/Button.astro";
-import MigrationMap from "../../components/ui/MigrationMap.astro";
-import ShortcutFoxWarning from "../../components/ui/ShortcutFoxWarning.astro";
-import GlossaryTerm from "../../components/glossary/GlossaryTerm.astro";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import { providerTransferFaqs, providerTransferSteps } from '~/data/boho';
+
+const metadata = {
+  title: 'SEO & Hosting Provider Transfer',
+  description: 'Switch providers without losing the trail. Boho Digital helps map transfers, preserve search value, and document the handoff.',
+};
 ---
-<BaseLayout
-  title="SEO & Hosting Provider Transfer | Boho Digital"
-  description="Switch providers without losing the trail. Boho Digital helps map transfers, preserve search value, and document the handoff."
-  image="/assets/backgrounds/forest-mist.webp"
->
-  <section class="page-hero section-forest image-backed">
-    <div class="container page-hero-grid">
-      <div class="hero-panel" data-reveal>
-        <div class="breadcrumbs">
-          <a href="/">Home</a>
-          <span>/</span>
-          <a href="/services/">Services</a>
-          <span>/</span>
-          <strong>SEO &amp; Hosting Provider Transfer</strong>
-        </div>
-        <p class="eyebrow">SEO &amp; Hosting Provider Transfer</p>
-        <h1>Switch providers without losing the trail.</h1>
-        <p class="hero-lead">
-          Moving away from an old SEO agency, hosting provider, website platform, or
-          messy vendor setup can be stressful. Boho Digital helps map the transfer,
-          preserve search value, and clean up the handoff step by step.
-        </p>
-        <div class="page-actions">
-          <Button href="/contact/">Ask about a transfer</Button>
-          <Button href="/ask-the-owl/dictionary/" variant="secondary">Open the Dictionary</Button>
-        </div>
-      </div>
-      <aside class="hero-side-panel" data-reveal="left">
-        <p class="micro-label">What we help transfer</p>
-        <ul class="ledger-list">
-          <li>SEO agency setups and reporting layers</li>
-          <li>Hosting accounts and platform migrations</li>
-          <li>DNS and registrar changes</li>
-          <li>Analytics and Search Console continuity</li>
-          <li>Redirect plans and owner-facing documentation</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container chapter-grid">
-      <article class="section-card" data-reveal>
-        <p class="eyebrow">Why transfers get messy</p>
-        <p>
-          Old vendors do not always leave clean trails. Domains may be registered under
-          the wrong account. <GlossaryTerm slug="dns" /> records may be undocumented.
-          Analytics may be missing. Search Console may not be verified. Redirects may be
-          unknown. Hosting may be tied to a platform or agency relationship you no
-          longer want.
-        </p>
-      </article>
-      <article class="section-card" data-reveal="left">
-        <p class="eyebrow">What we help transfer</p>
-        <ul class="ledger-list">
-          <li>Domain and registrar access inventory</li>
-          <li>Hosting environments and platform ownership checks</li>
-          <li>CMS or repository visibility</li>
-          <li>Analytics layers and Search Console continuity</li>
-          <li><GlossaryTerm slug="redirect-map" /> planning, metadata, and launch-day QA</li>
-        </ul>
-      </article>
-    </div>
-  </section>
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="SEO & Hosting Provider Transfer"
+    title="Switch providers without losing the trail."
+    subtitle="Moving away from an old SEO agency, hosting provider, website platform, or messy vendor setup can be stressful. Boho Digital helps map the transfer, preserve search value, and clean up the handoff step by step."
+    callToAction={{ text: 'Ask about a transfer', href: '/contact/' }}
+    callToAction2={{ text: 'Open Ask the Owl', href: '/ask-the-owl/' }}
+  />
 
-  <section class="section section-band-mist">
-    <div class="container">
-      <div class="section-heading compact" data-reveal>
-        <p class="eyebrow">Migration map</p>
-        <h2>Controlled movement beats brave chaos.</h2>
-      </div>
-      <MigrationMap steps={["Inventory", "Preserve", "Plan", "Move", "Verify", "Document"]} />
-    </div>
-  </section>
+  <Features2
+    title="Why transfers get messy"
+    columns={3}
+    items={[
+      {
+        title: 'Ownership is unclear',
+        description: 'Domains, hosting, analytics, and platforms may be controlled by the wrong account or the wrong vendor.',
+        icon: 'tabler:key-off',
+      },
+      {
+        title: 'Documentation is thin',
+        description: 'DNS records, redirects, metadata rules, and launch dependencies are often undocumented.',
+        icon: 'tabler:file-x',
+      },
+      {
+        title: 'Fear replaces planning',
+        description: 'People are often told the move will destroy SEO without getting a usable explanation of what is actually at risk.',
+        icon: 'tabler:alert-triangle',
+      },
+    ]}
+  />
 
-  <section class="section">
-    <div class="container chapter-grid">
-      <article class="section-card" data-reveal>
-        <p class="eyebrow">SEO preservation checklist</p>
-        <ul class="ledger-list">
+  <Features2
+    title="What we help transfer"
+    columns={3}
+    items={[
+      { title: 'SEO agency setups and reporting layers', description: 'Recover the real accounts, reporting views, and search ownership trail.', icon: 'tabler:chart-line' },
+      { title: 'Hosting accounts and platform migrations', description: 'Understand where the site lives now and what changes during the move.', icon: 'tabler:server-2' },
+      { title: 'DNS and registrar changes', description: 'Document the routing layer before anyone touches the records panel.', icon: 'tabler:world-www' },
+      { title: 'Analytics and Search Console continuity', description: 'Protect the visibility and measurement trail you still need after launch.', icon: 'tabler:chart-dots-3' },
+      { title: 'Redirect planning and metadata review', description: 'Preserve valuable paths instead of losing them to avoidable URL drift.', icon: 'tabler:arrow-fork' },
+      { title: 'Owner-facing handoff documentation', description: 'Leave the stack more legible after the move than before it.', icon: 'tabler:file-description' },
+    ]}
+  />
+
+  <Steps
+    tagline="Migration steps"
+    title="Controlled movement beats brave chaos."
+    items={providerTransferSteps}
+  />
+
+  <WidgetWrapper>
+    <Headline
+      title="Checklists and red flags"
+      subtitle="Use normal cards, not mystery jargon, to keep the handoff readable."
+    />
+    <div class="mt-10 grid gap-4 lg:grid-cols-3">
+      <article class="rounded-3xl border border-moss/15 bg-white/90 p-6 shadow-sm">
+        <p class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">SEO preservation checklist</p>
+        <ul class="mt-4 space-y-3 text-muted">
           <li>Current high-value URLs and top organic landing pages identified</li>
-          <li><GlossaryTerm slug="redirect-map" /> drafted before launch</li>
-          <li><GlossaryTerm slug="metadata" /> and title logic reviewed</li>
-          <li><GlossaryTerm slug="google-search-console" /> access confirmed</li>
+          <li>Redirect map drafted before launch</li>
+          <li>Metadata and title logic reviewed</li>
+          <li>Search Console access confirmed</li>
           <li>Sitemap and robots.txt reviewed before the move</li>
           <li>Post-launch crawl and indexing checks scheduled</li>
         </ul>
       </article>
-      <article class="section-card" data-reveal="left">
-        <p class="eyebrow">Hosting transfer checklist</p>
-        <ul class="ledger-list">
+      <article class="rounded-3xl border border-moss/15 bg-white/90 p-6 shadow-sm">
+        <p class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">Hosting transfer checklist</p>
+        <ul class="mt-4 space-y-3 text-muted">
           <li>Domain registrar access identified</li>
-          <li><GlossaryTerm slug="dns" /> records documented before changes</li>
-          <li><GlossaryTerm slug="hosting-provider" /> and platform access confirmed</li>
+          <li>DNS records documented before changes</li>
+          <li>Hosting provider and platform access confirmed</li>
           <li>CMS or repository access reviewed</li>
           <li>Forms, email, and integrations noted</li>
-          <li>Analytics continuity plan prepared</li>
           <li>Owner-facing documentation created after the move</li>
         </ul>
       </article>
-    </div>
-  </section>
-
-  <section class="section section-band-terracotta">
-    <div class="container chapter-grid">
-      <ShortcutFoxWarning
-        title="Provider red flags worth catching early."
-        body="Watch for reluctance to share access, unclear account ownership, suspiciously vague migration promises, and anything that smells like provider lock-in."
-      />
-      <div class="section-card" data-reveal="left">
-        <p class="eyebrow">Provider red flags</p>
-        <ul class="ledger-list">
-          <li>Your provider owns your domain or controls the registrar account.</li>
+      <article class="rounded-3xl border border-terracotta/20 bg-white/90 p-6 shadow-sm shadow-terracotta/5">
+        <p class="text-sm font-semibold uppercase tracking-[0.12em] text-terracotta-dark">Provider red flags</p>
+        <ul class="mt-4 space-y-3 text-muted">
+          <li>Your provider owns your domain.</li>
           <li>You do not have Search Console access.</li>
-          <li>You cannot see analytics continuity clearly.</li>
-          <li>You do not know where the site is hosted.</li>
+          <li>You cannot see analytics.</li>
+          <li>You do not know where your site is hosted.</li>
           <li>Your provider refuses to document changes.</li>
-          <li>They claim leaving will destroy SEO without explaining why.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container chapter-grid">
-      <article class="section-card" data-reveal>
-        <p class="eyebrow">What we need from you</p>
-        <ul class="ledger-list">
-          <li>Whatever login trail you already have, even if it is incomplete</li>
-          <li>The current domain, website, and provider relationships as you understand them</li>
-          <li>Any known launch deadlines, vendor handoff dates, or blackout windows</li>
-          <li>The pages, leads, or reporting views you are most worried about protecting</li>
+          <li>Your provider says leaving will destroy SEO without explaining why.</li>
         </ul>
       </article>
-      <div class="section-card" data-reveal="left">
-        <p class="eyebrow">FAQs</p>
-        <div class="faq-stack">
-          <div>
-            <h3>What if we only have part of the login trail?</h3>
-            <p>That is common. The first stage is often figuring out what exists, what is missing, and what matters first.</p>
-          </div>
-          <div>
-            <h3>Can you work alongside our developer or host?</h3>
-            <p>Yes. Boho often acts as the mapkeeper for search, tracking, and handoff quality while other technical work moves in parallel.</p>
-          </div>
-          <div>
-            <h3>Does this stop at launch?</h3>
-            <p>No. The transfer includes verification and documentation so ownership is clearer after the move than before it.</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+  </WidgetWrapper>
 
-  <section class="section">
-    <div class="container">
-      <div class="service-highlight final-cta-panel" data-reveal>
-        <p class="eyebrow">Final CTA</p>
-        <h2>Bring the messy stack. We will help map the handoff.</h2>
-        <p>
-          You do not need perfect documentation before reaching out. Send what you know
-          and Boho will help identify the missing pieces.
-        </p>
-        <div class="cta-actions">
-          <Button href="/contact/">Start the transfer conversation</Button>
-          <Button href="/ask-the-owl/dictionary/provider-lock-in/" variant="secondary">Read about provider lock-in</Button>
-        </div>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  <FAQs title="FAQs" columns={1} items={providerTransferFaqs} />
+
+  <CallToAction
+    title="Bring the messy stack. We'll help map the handoff."
+    subtitle="You do not need perfect documentation before reaching out. Send what you know and Boho will help identify the missing pieces."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start the transfer conversation',
+        href: '/contact/',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,73 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import { serviceCards } from '~/data/boho';
+
+const metadata = {
+  title: 'Services',
+  description:
+    'SEO, content, analytics, provider-transfer support, and thoughtful optimization built like an ecosystem.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Services"
+    title="SEO, content, and web strategy built like an ecosystem."
+    subtitle="Boho combines technical structure, content depth, analytics, provider-transfer support, and thoughtful optimization to help your brand grow organically and measurably."
+    callToAction={{ text: 'Get a Growth Audit', href: '/contact/' }}
+    callToAction2={{ text: 'Ask about Provider Transfer', href: '/services/provider-transfer/' }}
+  />
+
+  <Features2
+    title="Readable service cards, not mystery packages."
+    subtitle="Start with the smallest useful system that still strengthens the whole forest."
+    columns={3}
+    items={serviceCards.map((service) => ({
+      ...service,
+      callToAction: service.href
+        ? {
+            text: 'Learn more',
+            href: service.href,
+          }
+        : undefined,
+    }))}
+  />
+
+  <Content
+    tagline="Provider transfer callout"
+    title="Switch providers without losing the trail."
+    subtitle="Provider-transfer support exists because growth work gets fragile when nobody can explain who owns the domain, hosting, analytics, or redirects."
+    items={[
+      {
+        title: 'Inventory the stack',
+        description: 'Find the accounts, vendors, and access layers that matter before they become launch-day surprises.',
+      },
+      {
+        title: 'Preserve search value',
+        description: 'Protect URLs, metadata, analytics continuity, and the parts of the site already doing useful work.',
+      },
+      {
+        title: 'Leave better records',
+        description: 'Owner-facing documentation should be clearer after the move than before it.',
+      },
+    ]}
+    callToAction={{ text: 'See Provider Transfer Support', href: '/services/provider-transfer/' }}
+    image={{ src: '/assets/backgrounds/moss-texture.webp', alt: 'Moss texture representing patient structural work' }}
+  />
+
+  <CallToAction
+    title="Not sure which service is the right first step?"
+    subtitle="Bring the real situation. Boho can help you figure out whether the next move is an audit, cleanup pass, transfer plan, or ongoing support."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Start the conversation',
+        href: '/contact/',
+      },
+    ]}
+  />
+</Layout>

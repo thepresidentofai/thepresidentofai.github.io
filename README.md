@@ -1,50 +1,58 @@
-# thepresidentofai.github.io
+# Boho Digital
 
-## Purpose
+Astro-based marketing site for `bohodigitalservices.com`, rebuilt on top of AstroWind as a clean reset from the earlier custom implementation.
 
-Astro-generated GitHub Pages site for `Boho Digital`, published from the `thepresidentofai` account.
-
-## Brand Source of Truth
+## Brand
 
 - `Boho Digital`
 - `Bohemian Digital Marketing & SEO`
 - `Organic growth, engineered beautifully.`
-- forest / honeycomb visual system
-- Ask the Owl educational layer
-- Shortcut Fox warning modules
-- climate-aware impact messaging
-- provider-transfer support
 
-## Project Structure
+## Current routes
+
+- `/`
+- `/services/`
+- `/services/provider-transfer/`
+- `/ask-the-owl/`
+- `/ask-the-owl/dictionary/`
+- `/bad-seo-field-guide/`
+- `/impact/`
+- `/work/`
+- `/about/`
+- `/contact/`
+- `/pricing/`
+- `/privacy/`
+- `/terms/`
+- `/404/`
+
+## Project structure
 
 - `src/pages/` - route source of truth
-- `src/data/` - site, navigation, service, and glossary data
-- `src/content/dictionary/` - Owl Dictionary markdown entries
-- `src/components/` - reusable Astro layout, section, UI, mascot, and glossary components
-- `src/styles/` - split tokens, base, typography, layout, buttons, forms, honeycomb, sections, glossary, utilities, and animation styling
-- `public/assets/` - local brand SVGs, patterns, textures, and supporting front-end assets
-- `_legacy-static/` - archived pre-Astro static export kept only for reference during the migration
-- `.github/workflows/deploy.yml` - GitHub Pages deployment pipeline for `dist/`
+- `src/data/boho.ts` - approved Boho content blocks, cards, and glossary data
+- `src/components/` - AstroWind-based widgets, shared UI, and layout pieces used by the reset
+- `src/assets/styles/tailwind.css` - theme tokens and shared utility styling
+- `public/assets/` - Boho brand assets, patterns, and background imagery
+- `public/CNAME` - custom domain binding for GitHub Pages
+- `vendor/integration/` - AstroWind integration used by the site config
+- `_legacy-boho/current/` - archive of the pre-reset implementation kept for reference only
+- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow
 
 ## Commands
 
-Use a modern Node runtime, then run:
+Use Node 22 or newer, then run:
 
 ```bash
-npm install
+npm ci
 npm run build
-npm run check
 npm run preview
+```
+
+Optional verification:
+
+```bash
+npm run check
 ```
 
 ## Deployment
 
-GitHub Actions builds the Astro project and deploys `dist/` to GitHub Pages.
-
-Remote: `git@github.com:thepresidentofai/thepresidentofai.github.io.git`
-
-## Verification
-
-- Repository: `https://github.com/thepresidentofai/thepresidentofai.github.io`
-- Published site: `https://bohodigitalservices.com/`
-- GitHub Pages hostname: `https://thepresidentofai.github.io/`
+GitHub Actions builds the site from `main` and deploys `dist/` to GitHub Pages. The custom domain is provided through `public/CNAME`.

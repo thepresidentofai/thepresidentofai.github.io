@@ -1,46 +1,56 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import DictionaryIndex from "../../../components/glossary/DictionaryIndex.astro";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Button from '~/components/ui/Button.astro';
+import { dictionaryTerms } from '~/data/boho';
 
-const entries = (await getCollection("dictionary")).sort((a, b) => {
-  const aOrder = a.data.order ?? 999;
-  const bOrder = b.data.order ?? 999;
-  return aOrder - bOrder || a.data.title.localeCompare(b.data.title);
-});
+const metadata = {
+  title: 'Dictionary',
+  description: 'A simple categorized list of Boho Digital dictionary terms for SEO, content, analytics, provider transfers, AI, and digital footprint questions.',
+};
+
+const categories = Array.from(new Set(dictionaryTerms.map((term) => term.category)));
 ---
-<BaseLayout
-  title="SEO Dictionary | Ask the Owl | Boho Digital"
-  description="The Owl Dictionary explains SEO, provider transfers, reporting, and digital operations in plain language."
-  image="/assets/backgrounds/forest-mist.webp"
->
-  <section class="page-hero section-forest image-backed">
-    <div class="container page-hero-grid">
-      <div class="hero-panel" data-reveal>
-        <div class="breadcrumbs">
-          <a href="/">Home</a>
-          <span>/</span>
-          <a href="/ask-the-owl/">Ask the Owl</a>
-          <span>/</span>
-          <strong>Dictionary</strong>
-        </div>
-        <p class="eyebrow">Ask the Owl</p>
-        <h1>The Owl Dictionary</h1>
-        <p class="hero-lead">
-          Short definitions first. Full context when you need it. This index stays
-          small, navigable, and tied to real Boho work instead of becoming a jargon dump.
-        </p>
-      </div>
-      <aside class="hero-side-panel" data-reveal="left">
-        <p class="micro-label">Coverage</p>
-        <p>Search basics, provider transfers, reporting traps, AI-assisted workflows, and careful impact language.</p>
-      </aside>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <DictionaryIndex entries={entries} />
+<Layout metadata={metadata}>
+  <HeroText
+    tagline="Dictionary"
+    title="The Owl Dictionary."
+    subtitle="A simple categorized list. No hover popovers, no inline definitions, and no extra theater."
+  />
+
+  <WidgetWrapper>
+    <Headline
+      title="Seed terms"
+      subtitle="Start with the plain-English definition, then open a related page if it exists."
+    />
+
+    <div class="mt-10 space-y-12">
+      {categories.map((category) => (
+        <section>
+          <div class="mb-5">
+            <h2 class="text-2xl font-bold text-charcoal">{category}</h2>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {dictionaryTerms
+              .filter((term) => term.category === category)
+              .map((term) => (
+                <article class="rounded-3xl border border-moss/15 bg-white/90 p-6 shadow-sm">
+                  <p class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">{term.category}</p>
+                  <h3 class="mt-3 text-2xl font-bold text-charcoal">{term.term}</h3>
+                  <p class="mt-3 text-muted">{term.definition}</p>
+                  {term.href && (
+                    <div class="mt-4">
+                      <Button href={term.href} variant="secondary">Read more</Button>
+                    </div>
+                  )}
+                </article>
+              ))}
+          </div>
+        </section>
+      ))}
     </div>
-  </section>
-</BaseLayout>
+  </WidgetWrapper>
+</Layout>
