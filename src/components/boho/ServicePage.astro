@@ -5,6 +5,7 @@ import CallToAction from "~/components/widgets/CallToAction.astro";
 import WidgetWrapper from "~/components/ui/WidgetWrapper.astro";
 import Headline from "~/components/ui/Headline.astro";
 import Button from "~/components/ui/Button.astro";
+import GlossaryText from "~/components/glossary/GlossaryText.astro";
 import {
   getDictionaryTermHref,
   getServiceCardBySlug,
@@ -104,7 +105,9 @@ if (page.includeFieldGuide) {
       {
         page.fixes.map((item) => (
           <article class="rounded-3xl border border-moss/15 bg-white/90 p-6 shadow-sm">
-            <p class="text-muted">{item}</p>
+            <p class="text-muted">
+              <GlossaryText text={item} />
+            </p>
           </article>
         ))
       }
@@ -123,7 +126,9 @@ if (page.includeFieldGuide) {
             <p class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">
               Step {index + 1}
             </p>
-            <p class="mt-3 text-muted">{item}</p>
+            <p class="mt-3 text-muted">
+              <GlossaryText text={item} />
+            </p>
           </article>
         ))
       }
@@ -139,7 +144,9 @@ if (page.includeFieldGuide) {
       {
         page.whatYouGet.map((item) => (
           <article class="rounded-3xl border border-moss/15 bg-white/90 p-6 shadow-sm">
-            <p class="font-semibold text-charcoal">{item}</p>
+            <p class="font-semibold text-charcoal">
+              <GlossaryText text={item} />
+            </p>
           </article>
         ))
       }
@@ -160,7 +167,7 @@ if (page.includeFieldGuide) {
         >
           No fog machines
         </p>
-        <p class="mt-3 text-muted">{page.honesty}</p>
+        <p class="mt-3 text-muted"><GlossaryText text={page.honesty} /></p>
       </article>
       <article
         class="rounded-3xl border border-moss/15 bg-white/90 p-6 shadow-sm"
@@ -168,7 +175,7 @@ if (page.includeFieldGuide) {
         <p class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">
           Good fit
         </p>
-        <p class="mt-3 text-muted">{page.goodFit}</p>
+        <p class="mt-3 text-muted"><GlossaryText text={page.goodFit} /></p>
       </article>
       <article
         class="rounded-3xl border border-moss/15 bg-white/90 p-6 shadow-sm"
@@ -176,7 +183,7 @@ if (page.includeFieldGuide) {
         <p class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">
           Not a fit
         </p>
-        <p class="mt-3 text-muted">{page.notFit}</p>
+        <p class="mt-3 text-muted"><GlossaryText text={page.notFit} /></p>
       </article>
     </div>
   </WidgetWrapper>

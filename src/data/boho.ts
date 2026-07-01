@@ -1,3 +1,9 @@
+import {
+  dictionaryByTerm,
+  dictionaryEntries,
+  getDictionaryEntryHref,
+} from "./dictionary";
+
 export interface ServiceCard {
   title: string;
   description: string;
@@ -53,15 +59,13 @@ export interface ServicePageDetail {
 
 const getServiceHref = (slug: string) => `/services/${slug}/`;
 
-const slugifyTerm = (term: string) =>
-  term
-    .toLowerCase()
-    .replace(/&/g, " and ")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-
-export const getDictionaryTermHref = (term: string) =>
-  `/ask-the-owl/dictionary/#${slugifyTerm(term)}`;
+export const getDictionaryTermHref = (term: string) => {
+  const entry = dictionaryByTerm[term.toLowerCase()];
+  if (!entry) {
+    throw new Error(`Missing dictionary term: ${term}`);
+  }
+  return getDictionaryEntryHref(entry.slug);
+};
 
 export const featureStrip = [
   {
@@ -218,7 +222,7 @@ export const servicePageDetails: ServicePageDetail[] = [
       "You need a second opinion before switching providers.",
     ],
     whatBohoDoes: [
-      "Reviews site structure, indexability, metadata, internal links, service pages, and content depth.",
+      "Reviews site structure, [[indexing]], [[metadata]], [[internal-links|internal links]], [[service-page|service pages]], and content depth.",
       "Checks obvious technical blockers and crawl-path issues.",
       "Looks for ownership risks around analytics, Search Console, hosting, DNS, and reporting.",
       "Identifies quick wins, structural fixes, content gaps, and sequencing priorities.",
@@ -287,7 +291,7 @@ export const servicePageDetails: ServicePageDetail[] = [
     ],
     whatBohoDoes: [
       "Reviews crawlability and indexability.",
-      "Checks metadata, headings, canonical signals, redirects, internal links, and sitemap behavior.",
+      "Checks [[metadata]], [[heading-structure|heading structure]], [[canonical-url|canonical signals]], [[internal-links|internal links]], and [[sitemap]] behavior.",
       "Prioritizes fixes by likely impact and implementation difficulty.",
       "Coordinates with developers or implements static-site fixes where appropriate.",
       "Leaves clear documentation of what changed and what still needs monitoring.",
@@ -348,7 +352,7 @@ export const servicePageDetails: ServicePageDetail[] = [
       "You need a publishing plan that supports actual business goals.",
     ],
     whatBohoDoes: [
-      "Maps service topics, search intent, and supporting content clusters.",
+      "Maps service topics, [[search-intent|search intent]], supporting [[content-cluster|content clusters]], and [[internal-links|internal link]] paths.",
       "Builds page briefs for core services and supporting articles.",
       "Recommends internal-link paths between commercial, educational, and trust-building pages.",
       "Reviews content for usefulness, originality, clarity, and conversion fit.",
@@ -410,7 +414,7 @@ export const servicePageDetails: ServicePageDetail[] = [
     ],
     whatBohoDoes: [
       "Reviews Google Business Profile completeness and positioning.",
-      "Checks business detail consistency, service categories, local page quality, and review signals.",
+      "Checks [[google-business-profile|Google Business Profile]], [[nap-consistency|business detail consistency]], [[service-area-page|local page quality]], and [[review-strategy|review signals]].",
       "Recommends local content and service-area improvements.",
       "Helps build a simple review-request process.",
       "Connects local visibility work to reporting and next steps.",
@@ -472,7 +476,7 @@ export const servicePageDetails: ServicePageDetail[] = [
       "The site is bloated, slow, or awkward to maintain.",
     ],
     whatBohoDoes: [
-      "Reviews page hierarchy, messaging, CTAs, trust signals, and service clarity.",
+      "Reviews page hierarchy, [[heading-structure|structure]], [[service-page|service clarity]], [[conversion|conversion paths]], and trust signals.",
       "Rewrites or restructures key pages.",
       "Improves conversion paths without turning the site into a pop-up carnival.",
       "Recommends lean static-first build patterns where appropriate.",
@@ -525,7 +529,7 @@ export const servicePageDetails: ServicePageDetail[] = [
       "You need reporting that a business owner can actually use.",
     ],
     whatBohoDoes: [
-      "Reviews analytics and Search Console access.",
+      "Reviews [[google-search-console|Search Console]], [[ga4|GA4]], [[conversion|conversions]], [[kpi|KPIs]], and [[vanity-metrics|vanity metrics]].",
       "Checks basic measurement continuity.",
       "Identifies useful SEO and website performance metrics.",
       "Builds plain-English reporting notes.",
@@ -587,7 +591,7 @@ export const servicePageDetails: ServicePageDetail[] = [
     ],
     whatBohoDoes: [
       "Maps repetitive research, drafting, analysis, and reporting tasks.",
-      "Designs AI-assisted workflows with human checkpoints.",
+      "Builds [[ai-assisted-workflow|AI-assisted workflows]] with a [[prompt-library]], [[human-review-loop|human review loop]], and [[source-discipline|source discipline]].",
       "Creates reusable prompts and review checklists.",
       "Helps separate safe automation from risky automation.",
       "Documents how the workflow should be used and audited.",
@@ -651,7 +655,7 @@ export const servicePageDetails: ServicePageDetail[] = [
       "You want ongoing support without agency lock-in.",
     ],
     whatBohoDoes: [
-      "Reviews performance and priorities monthly.",
+      "Reviews [[google-search-console|Search Console]], [[ga4|GA4]], [[kpi|KPIs]], [[content-cluster|content clusters]], and technical priorities monthly.",
       "Maintains SEO and content action lists.",
       "Monitors technical and reporting issues.",
       "Supports page updates, briefs, internal links, and documentation.",
@@ -734,164 +738,14 @@ export const providerTransferSteps = [
   },
 ];
 
-export const dictionaryTerms: DictionaryTerm[] = [
-  {
-    term: "SEO",
-    category: "SEO Basics",
-    definition:
-      "The practice of improving how easily the right people can find your site in search.",
-    href: getServiceHref("seo-growth-audit"),
-  },
-  {
-    term: "Technical SEO",
-    category: "SEO Basics",
-    definition:
-      "The under-the-hood setup that helps search engines crawl, understand, and trust a website.",
-    href: getServiceHref("technical-seo-cleanup"),
-  },
-  {
-    term: "Crawlability",
-    category: "SEO Basics",
-    definition:
-      "How easily search engines can discover and move through your pages.",
-    href: getServiceHref("technical-seo-cleanup"),
-  },
-  {
-    term: "Indexing",
-    category: "SEO Basics",
-    definition:
-      "The step where a search engine decides a page is worth storing and showing in results.",
-    href: getServiceHref("technical-seo-cleanup"),
-  },
-  {
-    term: "Metadata",
-    category: "SEO Basics",
-    definition:
-      "The page titles, descriptions, and other signals that help search engines and people understand what a page is about.",
-    href: getServiceHref("technical-seo-cleanup"),
-  },
-  {
-    term: "Content cluster",
-    category: "Content Strategy",
-    definition:
-      "A group of related pages that support a core topic or service from different angles.",
-    href: getServiceHref("content-ecosystem-buildout"),
-  },
-  {
-    term: "Search intent",
-    category: "Content Strategy",
-    definition:
-      "The reason someone is making a search in the first place, beyond the literal words used.",
-    href: getServiceHref("content-ecosystem-buildout"),
-  },
-  {
-    term: "Internal links",
-    category: "Content Strategy",
-    definition:
-      "Links between pages on your own site that help visitors and search engines move through related topics.",
-    href: getServiceHref("content-ecosystem-buildout"),
-  },
-  {
-    term: "Google Search Console",
-    category: "Analytics & Reporting",
-    definition:
-      "Google's own visibility and indexing dashboard for site owners.",
-    href: getServiceHref("analytics-reporting"),
-  },
-  {
-    term: "Vanity metrics",
-    category: "Analytics & Reporting",
-    definition:
-      "Numbers that look impressive without helping a team make better decisions.",
-    href: getServiceHref("analytics-reporting"),
-  },
-  {
-    term: "Analytics migration",
-    category: "Analytics & Reporting",
-    definition:
-      "The work of preserving measurement continuity when a site, platform, or provider changes.",
-    href: getServiceHref("analytics-reporting"),
-  },
-  {
-    term: "DNS",
-    category: "Provider Transfers",
-    definition:
-      "The routing layer that connects your domain name to the services that actually run your website and email.",
-    href: getServiceHref("provider-transfer"),
-  },
-  {
-    term: "Domain registrar",
-    category: "Provider Transfers",
-    definition:
-      "The company where a domain name is registered, renewed, and sometimes quietly held hostage.",
-    href: getServiceHref("provider-transfer"),
-  },
-  {
-    term: "Hosting provider",
-    category: "Provider Transfers",
-    definition:
-      "The company that serves your website files or application to visitors.",
-    href: getServiceHref("provider-transfer"),
-  },
-  {
-    term: "Redirect map",
-    category: "Provider Transfers",
-    definition:
-      "A list showing which old URLs should point to which new URLs during a migration.",
-    href: getServiceHref("provider-transfer"),
-  },
-  {
-    term: "SEO migration",
-    category: "Provider Transfers",
-    definition:
-      "The planning work that protects visibility while a site changes platforms, structure, or providers.",
-    href: getServiceHref("provider-transfer"),
-  },
-  {
-    term: "Provider lock-in",
-    category: "Provider Transfers",
-    definition:
-      "When a vendor makes it unnecessarily hard to leave, transfer, or access your own setup.",
-    href: getServiceHref("provider-transfer"),
-  },
-  {
-    term: "AI-assisted workflow",
-    category: "AI & Digital Tools",
-    definition:
-      "A workflow that uses automation and language tools to reduce drag around research, drafting, sorting, or analysis.",
-    href: getServiceHref("ai-assisted-workflows"),
-  },
-  {
-    term: "Link farm",
-    category: "Bad SEO / Fox Traps",
-    definition:
-      "A low-quality network created mainly to manufacture backlinks instead of real trust.",
-  },
-  {
-    term: "Guaranteed rankings",
-    category: "Bad SEO / Fox Traps",
-    definition: "A promise of search outcomes nobody can honestly control.",
-  },
-  {
-    term: "Black-box SEO",
-    category: "Bad SEO / Fox Traps",
-    definition:
-      "SEO work described so vaguely that no one can tell what is being done or why.",
-  },
-  {
-    term: "Private blog network",
-    category: "Bad SEO / Fox Traps",
-    definition:
-      "A network of sites built mainly to pass authority signals rather than publish trustworthy content.",
-  },
-  {
-    term: "Climate-aware workflow",
-    category: "Climate & Digital Footprint",
-    definition:
-      "A workflow that aims to reduce unnecessary digital waste while staying honest about the footprint of modern tools.",
-    href: "/impact/",
-  },
-];
+export const dictionaryTerms: DictionaryTerm[] = dictionaryEntries.map(
+  (entry) => ({
+    term: entry.term,
+    category: entry.category,
+    definition: entry.shortDefinition,
+    href: getDictionaryEntryHref(entry.slug),
+  }),
+);
 
 export const warningCards = [
   {

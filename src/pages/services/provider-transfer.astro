@@ -7,6 +7,7 @@ import CallToAction from "~/components/widgets/CallToAction.astro";
 import WidgetWrapper from "~/components/ui/WidgetWrapper.astro";
 import Headline from "~/components/ui/Headline.astro";
 import Button from "~/components/ui/Button.astro";
+import GlossaryText from "~/components/glossary/GlossaryText.astro";
 import {
   getDictionaryTermHref,
   getServiceCardBySlug,
@@ -135,6 +136,22 @@ const relatedTerms = [
       },
     ]}
   />
+
+  <WidgetWrapper>
+    <Headline
+      title="Provider transfer terms you should know"
+      subtitle="A few boring terms become very expensive when they are ignored during a move."
+    />
+    <div
+      class="mx-auto max-w-4xl rounded-3xl border border-moss/15 bg-white/90 p-6 shadow-sm"
+    >
+      <p class="text-lg text-muted">
+        <GlossaryText
+          text="Boho helps map [[dns]], [[hosting-provider|hosting]], [[domain-registrar|domain registration]], [[redirect-map|redirect maps]], [[analytics-migration|analytics continuity]], and the [[ownership-trail|ownership trail]]."
+        />
+      </p>
+    </div>
+  </WidgetWrapper>
 
   <Steps
     tagline="Transfer process"
