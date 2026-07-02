@@ -36,7 +36,6 @@ Astro-based marketing site for `bohodigitalservices.com`, rebuilt on top of Astr
 - `wrangler.worker.toml` - preserved Workers Static Assets fallback config; not the normal production path
 - `vendor/integration/` - AstroWind integration used by the site config
 - `_legacy-boho/current/` - archive of the pre-reset implementation kept for reference only
-- `.github/workflows/deploy.yml` - legacy GitHub Pages workflow; not the current production host
 
 ## Commands
 
@@ -63,6 +62,7 @@ Current state:
 - `bohodigitalservices.com` and `www.bohodigitalservices.com` are attached to the Cloudflare Pages project.
 - The Cloudflare Pages project is not currently Git-provider connected, so production deploys are direct uploads from this repo.
 - GitHub remains the source of truth for code. Push `main` first, then deploy the exact pushed commit.
+- GitHub Pages is not used for production, and this repo intentionally does not ship a `public/CNAME` file.
 
 Deploy the current commit:
 
