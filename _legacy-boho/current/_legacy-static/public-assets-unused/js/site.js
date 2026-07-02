@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   const dictionaryEntries = Array.isArray(window.BOHO_DICTIONARY) ? window.BOHO_DICTIONARY : [];
   const dictionaryMap = new Map(dictionaryEntries.map((entry) => [entry.slug, entry]));
 
@@ -355,5 +355,3 @@
     applyDictionaryFilter();
   }
 })();
-
-

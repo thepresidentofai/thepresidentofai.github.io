@@ -1,6 +1,6 @@
 ---
-title: 'Privacy'
-layout: '~/layouts/MarkdownLayout.astro'
+title: "Privacy"
+layout: "~/layouts/MarkdownLayout.astro"
 ---
 
 _Last updated_: June 29, 2026

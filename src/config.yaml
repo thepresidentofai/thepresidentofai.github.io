@@ -1,7 +1,7 @@
 site:
   name: Boho Digital
-  site: 'https://bohodigitalservices.com'
-  base: '/'
+  site: "https://bohodigitalservices.com"
+  base: "/"
   trailingSlash: false
 
   googleSiteVerificationId: null
@@ -9,21 +9,21 @@ site:
 metadata:
   title:
     default: Boho Digital
-    template: '%s | Boho Digital'
-  description: 'Organic growth, engineered beautifully. SEO, content, analytics, provider-transfer support, and climate-aware digital strategy for brands that want honest growth.'
+    template: "%s | Boho Digital"
+  description: "Organic growth, engineered beautifully. SEO, content, analytics, provider-transfer support, and climate-aware digital strategy for brands that want honest growth."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Boho Digital
     images:
-      - url: '/assets/backgrounds/forest-path.webp'
+      - url: "/assets/backgrounds/forest-path.webp"
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: ''
-    site: ''
+    handle: ""
+    site: ""
     cardType: summary_large_image
 
 i18n:
@@ -37,25 +37,25 @@ apps:
 
     post:
       isEnabled: false
-      permalink: '/%slug%'
+      permalink: "/%slug%"
       robots:
         index: false
 
     list:
       isEnabled: false
-      pathname: 'blog'
+      pathname: "blog"
       robots:
         index: false
 
     category:
       isEnabled: false
-      pathname: 'category'
+      pathname: "category"
       robots:
         index: false
 
     tag:
       isEnabled: false
-      pathname: 'tag'
+      pathname: "tag"
       robots:
         index: false
 
@@ -68,4 +68,4 @@ analytics:
       id: null
 
 ui:
-  theme: 'light:only'
+  theme: "light:only"

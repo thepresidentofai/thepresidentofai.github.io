@@ -1,14 +1,14 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import Layout from "~/layouts/PageLayout.astro";
+import HeroText from "~/components/widgets/HeroText.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Content from "~/components/widgets/Content.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
 
 const metadata = {
-  title: 'Work',
+  title: "Work",
   description:
-    'Every project leaves a trail. Boho documents audits, migrations, reporting, and implementation notes instead of hiding the work.',
+    "Every project leaves a trail. Boho documents audits, migrations, reporting, and implementation notes instead of hiding the work.",
 };
 ---
 
@@ -24,24 +24,28 @@ const metadata = {
     columns={2}
     items={[
       {
-        title: 'Audit roadmaps',
-        description: 'Sequencing, visibility blockers, content structure, and the next useful decisions.',
-        icon: 'tabler:route',
+        title: "Audit roadmaps",
+        description:
+          "Sequencing, visibility blockers, content structure, and the next useful decisions.",
+        icon: "tabler:route",
       },
       {
-        title: 'Migration maps',
-        description: 'Access recovery, redirects, DNS coordination, analytics continuity, and post-launch QA.',
-        icon: 'tabler:map-2',
+        title: "Migration maps",
+        description:
+          "Access recovery, redirects, DNS coordination, analytics continuity, and post-launch QA.",
+        icon: "tabler:map-2",
       },
       {
-        title: 'Implementation records',
-        description: 'Changes, checks, and handoff notes that survive the project instead of disappearing into chat.',
-        icon: 'tabler:file-description',
+        title: "Implementation records",
+        description:
+          "Changes, checks, and handoff notes that survive the project instead of disappearing into chat.",
+        icon: "tabler:file-description",
       },
       {
-        title: 'Owner-facing summaries',
-        description: 'Language that explains what the system is doing without hiding behind jargon or theater.',
-        icon: 'tabler:file-analytics',
+        title: "Owner-facing summaries",
+        description:
+          "Language that explains what the system is doing without hiding behind jargon or theater.",
+        icon: "tabler:file-analytics",
       },
     ]}
   />
@@ -51,19 +55,25 @@ const metadata = {
     title="No invented praise. No invented revenue numbers. No mystery theater."
     items={[
       {
-        title: 'No performance cosplay',
-        description: 'Boho will not pad a site with made-up customer praise or suspiciously glossy wins.',
+        title: "No performance cosplay",
+        description:
+          "Boho will not pad a site with made-up customer praise or suspiciously glossy wins.",
       },
       {
-        title: 'No silent black box',
-        description: 'The work should make the next person more capable, not more dependent.',
+        title: "No silent black box",
+        description:
+          "The work should make the next person more capable, not more dependent.",
       },
       {
-        title: 'No fluff where evidence should be',
-        description: 'Real artifacts matter more than decorative claims about what supposedly happened.',
+        title: "No fluff where evidence should be",
+        description:
+          "Real artifacts matter more than decorative claims about what supposedly happened.",
       },
     ]}
-    image={{ src: '/assets/backgrounds/moss-texture.webp', alt: 'Moss texture representing quiet documentation work' }}
+    image={{
+      src: "/assets/backgrounds/moss-texture.webp",
+      alt: "Moss texture representing quiet documentation work",
+    }}
   />
 
   <CallToAction
@@ -71,9 +81,9 @@ const metadata = {
     subtitle="Bring the context, the constraints, and the pieces that feel muddy. Boho can help map the next step."
     actions={[
       {
-        variant: 'primary',
-        text: 'Ask about a project',
-        href: '/contact/',
+        variant: "primary",
+        text: "Ask about a project",
+        href: "/contact/",
       },
     ]}
   />

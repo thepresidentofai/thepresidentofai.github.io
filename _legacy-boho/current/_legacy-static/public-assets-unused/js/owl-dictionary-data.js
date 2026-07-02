@@ -1,4 +1,4 @@
-﻿window.BOHO_DICTIONARY = [
+window.BOHO_DICTIONARY = [
   {
     slug: "seo",
     term: "SEO",
@@ -552,5 +552,3 @@
     fullEntryUrl: "/ask-the-owl/dictionary/climate-aware-workflow/"
   }
 ];
-
-

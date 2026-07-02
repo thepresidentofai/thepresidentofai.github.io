@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
   <title id="title">Placeholder geometric sand structure</title>
   <desc id="desc">Abstract layered geometry with warm sand and clay tones used as a temporary placeholder image.</desc>
   <!-- TODO: Replace with licensed or final generated architecture image asset. -->
@@ -9,5 +9,3 @@
   <rect x="590" y="256" width="220" height="220" rx="26" fill="#b45c3d"/>
   <rect x="824" y="380" width="170" height="170" rx="26" fill="#303827"/>
 </svg>
-
-

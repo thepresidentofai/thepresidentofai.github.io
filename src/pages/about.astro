@@ -1,12 +1,13 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Content from '~/components/widgets/Content.astro';
+import Layout from "~/layouts/PageLayout.astro";
+import HeroText from "~/components/widgets/HeroText.astro";
+import Features2 from "~/components/widgets/Features2.astro";
+import Content from "~/components/widgets/Content.astro";
 
 const metadata = {
-  title: 'About',
-  description: 'Boho Digital is a forest-inspired SEO and digital marketing studio built around clarity, documentation, and better ownership.',
+  title: "About",
+  description:
+    "Boho Digital is a forest-inspired SEO and digital marketing studio built around clarity, documentation, and better ownership.",
 };
 ---
 
@@ -22,19 +23,22 @@ const metadata = {
     columns={3}
     items={[
       {
-        title: 'Readable strategy',
-        description: 'Translate complex systems into plain-English next steps instead of agency fog.',
-        icon: 'tabler:notes',
+        title: "Readable strategy",
+        description:
+          "Translate complex systems into plain-English next steps instead of agency fog.",
+        icon: "tabler:notes",
       },
       {
-        title: 'Ownership clarity',
-        description: 'Leave a trail the next person can actually follow after the work is done.',
-        icon: 'tabler:key',
+        title: "Ownership clarity",
+        description:
+          "Leave a trail the next person can actually follow after the work is done.",
+        icon: "tabler:key",
       },
       {
-        title: 'Careful language',
-        description: 'Stay disciplined around AI, climate claims, and what the evidence can actually support.',
-        icon: 'tabler:leaf',
+        title: "Careful language",
+        description:
+          "Stay disciplined around AI, climate claims, and what the evidence can actually support.",
+        icon: "tabler:leaf",
       },
     ]}
   />
@@ -44,18 +48,24 @@ const metadata = {
     title="Smaller useful systems, built to last longer than the launch glow."
     items={[
       {
-        title: 'Search systems',
-        description: 'Search, content, reporting, and ownership are part of the same environment, not disconnected chores.',
+        title: "Search systems",
+        description:
+          "Search, content, reporting, and ownership are part of the same environment, not disconnected chores.",
       },
       {
-        title: 'Documentation',
-        description: 'Good work should remain understandable after launch, handoff, and inevitable future change.',
+        title: "Documentation",
+        description:
+          "Good work should remain understandable after launch, handoff, and inevitable future change.",
       },
       {
-        title: 'Steady stewardship',
-        description: 'Boho favors calmer rhythms, practical prioritization, and less theatrical digital clutter.',
+        title: "Steady stewardship",
+        description:
+          "Boho favors calmer rhythms, practical prioritization, and less theatrical digital clutter.",
       },
     ]}
-    image={{ src: '/assets/backgrounds/forest-mist.webp', alt: 'Forest mist representing quiet stewardship' }}
+    image={{
+      src: "/assets/backgrounds/forest-mist.webp",
+      alt: "Forest mist representing quiet stewardship",
+    }}
   />
 </Layout>

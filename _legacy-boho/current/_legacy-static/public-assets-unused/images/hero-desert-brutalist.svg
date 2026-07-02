@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" role="img" aria-labelledby="title desc">
   <title id="title">Placeholder desert brutalist hero scene</title>
   <desc id="desc">Abstract architectural desert forms used as a temporary hero image placeholder.</desc>
   <!-- TODO: Replace with licensed or final generated architecture image asset. -->
@@ -20,5 +20,3 @@
   <path d="M652 330h148" stroke="#b45c3d" stroke-width="12" stroke-linecap="round"/>
   <path d="M818 330h118" stroke="#f8f1e7" stroke-width="14" stroke-linecap="round"/>
 </svg>
-
-

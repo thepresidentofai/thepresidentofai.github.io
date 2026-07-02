@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="240" height="208" viewBox="0 0 240 208">
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="208" viewBox="0 0 240 208">
   <g fill="none" stroke="#dde7d7" stroke-opacity=".18" stroke-width="2">
     <path d="M40 14 68 30v32L40 78 12 62V30Z"/>
     <path d="M96 14 124 30v32L96 78 68 62V30Z"/>
@@ -13,5 +13,3 @@
     <path d="M208 110 236 126v32l-28 16-28-16v-32Z"/>
   </g>
 </svg>
-
-

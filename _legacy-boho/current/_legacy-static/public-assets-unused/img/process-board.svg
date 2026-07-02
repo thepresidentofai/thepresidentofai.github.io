@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 880" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 880" role="img" aria-labelledby="title desc">
   <title id="title">Boho Digital process board</title>
   <desc id="desc">A four-stage planning board labeled discover, build, refine, and support.</desc>
   <rect width="1000" height="880" rx="28" fill="#f7f0e3"/>
@@ -27,5 +27,3 @@
   <rect x="714" y="552" width="118" height="90" rx="18" fill="#394436"/>
   <rect x="714" y="692" width="162" height="58" rx="18" fill="#d7c0a0"/>
 </svg>
-
-
