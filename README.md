@@ -32,7 +32,8 @@ Astro-based marketing site for `bohodigitalservices.com`, rebuilt on top of Astr
 - `src/components/` - AstroWind-based widgets, shared UI, and layout pieces used by the reset
 - `src/assets/styles/tailwind.css` - theme tokens and shared utility styling
 - `public/assets/` - Boho brand assets, patterns, and background imagery
-- `wrangler.toml` - Cloudflare Pages/Wrangler deployment config
+- `wrangler.toml` - Cloudflare Pages deployment config
+- `wrangler.worker.toml` - preserved Workers Static Assets fallback config; not the normal production path
 - `vendor/integration/` - AstroWind integration used by the site config
 - `_legacy-boho/current/` - archive of the pre-reset implementation kept for reference only
 - `.github/workflows/deploy.yml` - legacy GitHub Pages workflow; not the current production host
@@ -74,7 +75,7 @@ wrangler pages deploy dist --project-name bohodigitalservices --branch main --co
 
 Use `wrangler pages deploy` for the production Pages project. Do not use plain
 `wrangler deploy` for production site updates unless intentionally publishing a
-separate Workers Static Assets deployment.
+separate Workers Static Assets deployment from `wrangler.worker.toml`.
 
 Verify the live site:
 
