@@ -1,179 +1,29 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Headline from '~/components/ui/Headline.astro';
-import Button from '~/components/ui/Button.astro';
-import { featureStrip, serviceCards } from '~/data/boho';
+import Layout from "~/layouts/PageLayout.astro";
+import HomeHero from "~/components/home/HomeHero.astro";
+import LeanTechStrip from "~/components/home/LeanTechStrip.astro";
+import EntryPaths from "~/components/home/EntryPaths.astro";
+import MonthlySupportFeature from "~/components/home/MonthlySupportFeature.astro";
+import RushSupportFeature from "~/components/home/RushSupportFeature.astro";
+import HiveProcess from "~/components/home/HiveProcess.astro";
+import KnowledgeTrustSplit from "~/components/home/KnowledgeTrustSplit.astro";
+import HomeFinalCTA from "~/components/home/HomeFinalCTA.astro";
 
 const metadata = {
-  title: 'Boho Digital',
+  title: "Boho Digital",
   ignoreTitleTemplate: true,
   description:
-    'Organic growth, engineered beautifully. SEO, content, web optimization, analytics, and migration systems for brands that want honest growth.',
+    "A lean, tech-enabled growth studio for SEO, websites, analytics, monthly support, provider transfers, and urgent digital cleanup.",
 };
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    tagline="Boho Digital"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get a Growth Audit',
-        href: '/contact/',
-      },
-      {
-        text: 'Explore Our Services',
-        href: '/services/',
-      },
-    ]}
-    image={{ src: '/assets/backgrounds/forest-path.webp', alt: 'A mossy forest path representing mapped organic growth' }}
-  >
-    <Fragment slot="title">Organic growth, engineered beautifully.</Fragment>
-    <Fragment slot="subtitle">
-      Boho Digital builds SEO, content, web optimization, analytics, and migration systems for brands that want to be
-      found, trusted, and chosen without getting lost in agency fog.
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-gradient-to-b from-mist via-cream to-cream"></div>
-    </Fragment>
-  </Hero>
-
-  <Features
-    id="features"
-    tagline="Bohemian creativity. Search-engine precision."
-    title="Beautiful systems. Honest growth. No fox traps."
-    subtitle="Technical structure, content depth, provider-transfer support, and reporting that stays readable."
-    columns={4}
-    items={featureStrip}
-  />
-
-  <Features2
-    tagline="Services overview"
-    title="SEO, content, and web strategy built like an ecosystem."
-    subtitle="Boho combines technical structure, content depth, analytics, provider-transfer support, and thoughtful optimization to help your brand grow organically and measurably."
-    columns={3}
-    items={serviceCards}
-  />
-
-  <Content
-    tagline="Provider Transfer feature"
-    title="Switching SEO or hosting providers?"
-    subtitle="Boho helps inventory access, preserve important URLs, plan redirects, coordinate DNS or hosting moves, verify analytics, and clean up the handoff step by step."
-    items={[
-      {
-        title: 'Access inventory',
-        description: 'Figure out who actually controls the domain, hosting, analytics, CMS, and reporting layers.',
-      },
-      {
-        title: 'Preservation plan',
-        description: 'Protect high-value URLs, metadata, redirects, forms, and search visibility before the move starts.',
-      },
-      {
-        title: 'Verification trail',
-        description: 'Check analytics continuity, Search Console, and owner-facing documentation after launch.',
-      },
-    ]}
-    callToAction={{ text: 'See Provider Transfer Support', href: '/services/provider-transfer/' }}
-    image={{ src: '/assets/backgrounds/forest-mist.webp', alt: 'Forest mist representing a calmer migration path' }}
-  />
-
-  <CallToAction
-    isDark={true}
-    title="Beautiful systems. Honest growth. No fox traps."
-    subtitle="No guaranteed ranking spells. No mystery dashboards. No agency-owned domains. No vendor lock-in dressed up as strategy."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Open the Field Guide',
-        href: '/bad-seo-field-guide/',
-      },
-      {
-        text: 'Review Provider Transfer Support',
-        href: '/services/provider-transfer/',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-gradient-to-br from-moss-black via-moss-dark to-terracotta-dark"></div>
-    </Fragment>
-  </CallToAction>
-
-  <Features2
-    tagline="Ask the Owl preview"
-    title="SEO is full of jargon. Ask the Owl turns important terms into plain English."
-    subtitle="Start with the categories, then follow the dictionary when you need a cleaner definition."
-    columns={3}
-    items={[
-      { title: 'SEO Basics', description: 'Start with the search language that shapes structure, crawling, and visibility.', icon: 'tabler:search' },
-      { title: 'Content Strategy', description: 'Untangle clusters, search intent, and the difference between useful content and blog sprawl.', icon: 'tabler:books' },
-      { title: 'Analytics & Reporting', description: 'Learn which numbers matter, which ones do not, and what should change after a launch.', icon: 'tabler:chart-histogram' },
-      { title: 'Provider Transfers', description: 'Understand DNS, hosting, redirect maps, analytics continuity, and why ownership gets messy.', icon: 'tabler:route-square-2' },
-      { title: 'AI & Digital Tools', description: 'See where AI helps, where it adds noise, and how to keep human judgment in charge.', icon: 'tabler:cpu-2' },
-      { title: 'Climate & Digital Footprint', description: 'Use modern tools while staying honest about digital waste and quieter operational choices.', icon: 'tabler:leaf' },
-    ]}
-  />
-
-  <WidgetWrapper>
-    <Headline
-      tagline="Impact teaser"
-      title="Growth that's good for brands, people, and the planet."
-      subtitle="We use modern digital tools while staying honest about their footprint. That means efficient workflows, lean websites, transparent impact reporting, and a portion of profits directed toward verified climate action and pollinator-friendly causes."
-    />
-    <div class="mt-10 flex flex-wrap justify-center gap-3">
-      {['Climate-aware workflows', 'Lean website practices', 'Pollinator support', 'Annual impact note'].map((badge) => (
-        <span class="inline-flex rounded-full border border-moss/15 bg-white/80 px-4 py-2 text-sm font-semibold text-moss-dark shadow-sm">
-          {badge}
-        </span>
-      ))}
-    </div>
-    <div class="mt-8 flex justify-center">
-      <Button href="/impact/">Read the impact page</Button>
-    </div>
-  </WidgetWrapper>
-
-  <WidgetWrapper>
-    <Headline
-      tagline="Work preview"
-      title="Documented work, not mystery theater."
-      subtitle="Boho does not publish invented praise or fake case studies. The real work lives in audit notes, migration plans, implementation records, and better handoffs."
-    />
-    <div class="mt-10 grid gap-4 md:grid-cols-3">
-      <article class="rounded-3xl border border-moss/15 bg-white/85 p-6 shadow-sm">
-        <p class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">Audit lane</p>
-        <h3 class="mt-3 text-xl font-bold text-charcoal">Clarity before chaos.</h3>
-        <p class="mt-3 text-muted">Roadmaps, prioritization, content structure, and the next useful decisions.</p>
-      </article>
-      <article class="rounded-3xl border border-moss/15 bg-white/85 p-6 shadow-sm">
-        <p class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">Transfer lane</p>
-        <h3 class="mt-3 text-xl font-bold text-charcoal">Migrations with receipts.</h3>
-        <p class="mt-3 text-muted">Redirect logic, DNS coordination, analytics continuity, and post-launch QA.</p>
-      </article>
-      <article class="rounded-3xl border border-moss/15 bg-white/85 p-6 shadow-sm">
-        <p class="text-sm font-semibold uppercase tracking-[0.12em] text-moss">Handoff lane</p>
-        <h3 class="mt-3 text-xl font-bold text-charcoal">Readable ownership trails.</h3>
-        <p class="mt-3 text-muted">Documentation that survives the launch glow instead of disappearing into chat.</p>
-      </article>
-    </div>
-    <div class="mt-8 flex justify-center">
-      <Button href="/work/">Explore the work lane</Button>
-    </div>
-  </WidgetWrapper>
-
-  <CallToAction
-    title="Let's map the forest."
-    subtitle="Start with the cleanest first step. We'll help the rest of the system make sense."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get a Growth Audit',
-        href: '/contact/',
-      },
-    ]}
-  />
+  <HomeHero />
+  <LeanTechStrip />
+  <EntryPaths />
+  <MonthlySupportFeature />
+  <RushSupportFeature />
+  <HiveProcess />
+  <KnowledgeTrustSplit />
+  <HomeFinalCTA />
 </Layout>
