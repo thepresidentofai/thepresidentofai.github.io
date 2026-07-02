@@ -32,10 +32,10 @@ Astro-based marketing site for `bohodigitalservices.com`, rebuilt on top of Astr
 - `src/components/` - AstroWind-based widgets, shared UI, and layout pieces used by the reset
 - `src/assets/styles/tailwind.css` - theme tokens and shared utility styling
 - `public/assets/` - Boho brand assets, patterns, and background imagery
-- `public/CNAME` - custom domain binding for GitHub Pages
+- `wrangler.toml` - Cloudflare Pages/Wrangler deployment config
 - `vendor/integration/` - AstroWind integration used by the site config
 - `_legacy-boho/current/` - archive of the pre-reset implementation kept for reference only
-- `.github/workflows/deploy.yml` - GitHub Pages deployment workflow
+- `.github/workflows/deploy.yml` - legacy GitHub Pages workflow; not the current production host
 
 ## Commands
 
@@ -55,4 +55,31 @@ npm run check
 
 ## Deployment
 
-GitHub Actions builds the site from `main` and deploys `dist/` to GitHub Pages. The custom domain is provided through `public/CNAME`.
+Production is served from Cloudflare Pages project `bohodigitalservices`.
+
+Current state:
+
+- `bohodigitalservices.com` and `www.bohodigitalservices.com` are attached to the Cloudflare Pages project.
+- The Cloudflare Pages project is not currently Git-provider connected, so production deploys are direct uploads from this repo.
+- GitHub remains the source of truth for code. Push `main` first, then deploy the exact pushed commit.
+
+Deploy the current commit:
+
+```powershell
+npm run build
+$commit = (git rev-parse HEAD).Trim()
+$message = (git log -1 --pretty=%s).Trim()
+wrangler pages deploy dist --project-name bohodigitalservices --branch main --commit-hash $commit --commit-message $message --commit-dirty=false
+```
+
+Use `wrangler pages deploy` for the production Pages project. Do not use plain
+`wrangler deploy` for production site updates unless intentionally publishing a
+separate Workers Static Assets deployment.
+
+Verify the live site:
+
+```bash
+curl https://bohodigitalservices.com/build-info.json
+```
+
+The returned `commit` should match `git rev-parse HEAD`.
